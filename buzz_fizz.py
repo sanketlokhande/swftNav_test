@@ -34,16 +34,17 @@ def F(n):
     print ('Fibonacci Series till ' + str(n) + ' = ' + str(a))
     print ('Substituted fibonacci  =  ' + str(b))
 
-def isPrime(p):
-    if p<2:
+def isPrime(number):
+    count = 0
+    if number == 0 or number == 1:
         return False
-    else:
-        i = 2
-        while i<p:
-            if not p%i:
-                return False
-            i +=1
+    for integer in range(2, 10, 1):
+        if number % integer == 0 and number != integer:
+            count += 1
+    if count == 0:
         return True
+    else:
+        return False
 
 if __name__ == '__main__':
     if sys.version_info < (3,0):
